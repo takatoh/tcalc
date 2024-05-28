@@ -1,0 +1,19 @@
+expr : val op val
+
+val : time
+
+time : HOURS_AND_MINUTES
+     | MINUTES
+
+HOURS_AND_MINUTES : DIGIT+ ":" "0"? DIGIT+
+
+MINUTES : DIGIT+
+
+op : ADD
+   | SUB
+
+ADD : "+"
+
+SUB : "-"
+
+%import common.DIGIT
