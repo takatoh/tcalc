@@ -27,7 +27,6 @@ class Parser():
 
 class Calculator(Interpreter):
     def expr(self, tree):
-        #print('Expr')
         t1, o, t2 = [self.visit(c) for c in tree.children]
         if o == '+':
             return t1 + t2
@@ -35,14 +34,11 @@ class Calculator(Interpreter):
             return t1 - t2
 
     def val(self, tree):
-        #print(f'Val: {tree.children}')
         return self.visit(tree.children[0])
 
     def time(self, tree):
-        #print(f'Time: {tree.children}')
         t = Time(tree.children[0].value)
         return t
 
     def op(self, tree):
-        #print(f'Op: {tree.children}')
         return tree.children[0].value
