@@ -7,5 +7,5 @@ class Time():
             self.minutes = int(t[0])
 
     def __str__(self):
-        h, m = divmod(self.minutes)
+        h, m = divmod(self.minutes, 60)
         return f'{h}:{m:0>2}'
