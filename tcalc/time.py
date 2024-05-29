@@ -15,3 +15,9 @@ class Time():
     def __str__(self):
         h, m = divmod(self.minutes, 60)
         return f'{h}:{m:0>2}'
+
+    def __add__(self, other):
+        return Time(self.minutes + other.minutes)
+
+    def __sub__(self, other):
+        return Time(self.minutes - other.minutes)
