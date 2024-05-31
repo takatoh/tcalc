@@ -27,11 +27,15 @@ class Parser():
 
 class Calculator(Interpreter):
     def expr(self, tree):
-        t1, o, t2 = [self.visit(c) for c in tree.children]
-        if o == '+':
-            return t1 + t2
-        elif o == '-':
-            return t1 - t2
+        tokens = [self.visit(c) for c in tree.children]
+        t1 = tokens[0]
+        chunks = [tokens[i:i+2] for i in range(1, len(tokens), 2)]
+        for o, t2 in chunks:
+            if o == '+':
+                t1 = t1 + t2
+            elif o == '-':
+                t1 = t1 - t2
+        return t1
 
     def val(self, tree):
         return self.visit(tree.children[0])
