@@ -26,6 +26,9 @@ class Parser():
 
 
 class Calculator(Interpreter):
+    def calculate(self, tree):
+        return self.visit(tree)
+
     def expr(self, tree):
         tokens = [self.visit(c) for c in tree.children]
         t1 = tokens[0]
