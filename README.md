@@ -21,3 +21,7 @@
     9:00
 
 になります。
+
+## License
+
+MIT License
