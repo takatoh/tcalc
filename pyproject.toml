@@ -14,7 +14,7 @@ lark = "^1.1.9"
 [[tool.poetry.source]]
 name = "pypilocal"
 url = "http://pypilocal/simple/"
-priority = "secondary"
+priority = "primary"
 
 [build-system]
 requires = ["poetry-core"]
