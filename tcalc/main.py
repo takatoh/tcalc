@@ -11,6 +11,9 @@ def main():
     parser = Parser()
     expr = ''.join(args.terms)
     tree = parser.parse(expr)
+    if args.tree:
+        print(tree.pretty())
+        exit(0)
     calculator = Calculator()
     answer = calculator.visit(tree)
     print(answer)
@@ -32,6 +35,11 @@ def parse_arguments():
         action='version',
         version=SCRIPT_VERSION,
         help='show version and exit'
+    )
+    parser.add_argument(
+        '--tree',
+        action='store_true',
+        help='show syntax tree and exit'
     )
     args = parser.parse_args()
     return args
