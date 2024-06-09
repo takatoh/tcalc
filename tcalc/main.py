@@ -1,4 +1,4 @@
-from tcalc.parser import Parser, Calculator
+from tcalc.core import Parser, Calculator
 import sys
 
 
