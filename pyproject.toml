@@ -11,11 +11,6 @@ python = "^3.11"
 lark = "^1.1.9"
 
 
-[[tool.poetry.source]]
-name = "pypilocal"
-url = "http://pypilocal/simple/"
-priority = "primary"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
