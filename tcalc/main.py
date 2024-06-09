@@ -15,7 +15,7 @@ def main():
         print(tree.pretty())
         exit(0)
     calculator = Calculator()
-    answer = calculator.visit(tree)
+    answer = calculator.calculate(tree)
     print(answer)
 
 
