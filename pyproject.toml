@@ -5,6 +5,7 @@ description = "Time calculator"
 authors = ["takatoh <takatoh.m@gmail.com>"]
 readme = "README.md"
 license = "MIT"
+include = ["grammer/tcalc.lark"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
