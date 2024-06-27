@@ -31,14 +31,12 @@ class Calculator(Interpreter):
 
     def expr(self, tree):
         tokens = [self.visit(c) for c in tree.children]
-        t1 = tokens[0]
-        chunks = [tokens[i:i+2] for i in range(1, len(tokens), 2)]
-        for o, t2 in chunks:
-            if o == '+':
-                t1 = t1 + t2
-            elif o == '-':
-                t1 = t1 - t2
-        return t1
+        t1, o, t2 = tokens
+        if o == '+':
+            t = t1 + t2
+        elif o == '-':
+            t = t1 - t2
+        return t
 
     def val(self, tree):
         return self.visit(tree.children[0])
